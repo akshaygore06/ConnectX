@@ -1,3 +1,5 @@
+Name : Akshay Gore
+
 Bug Report for ConnectX game
 
 1.  inBounds() :
