@@ -1,10 +1,12 @@
 #include "ConnectX.h"
 #include <iostream>
 
+using namespace std;
+
 // constructor provides customized dimensions and number of
 // sequential pieces (x) it takes to win the game
 ConnectX::ConnectX(int wide, int high, int x)
-{   
+{
 	//invalid input resets everything to default settings
 	if( wide <= 0 || high <= 0 || x <= 0)
 	{
@@ -17,11 +19,11 @@ ConnectX::ConnectX(int wide, int high, int x)
 	for(int i=0; i<high; i++)
 	{
 		board[i].resize(wide);
-		for(int j=0; j<wide; j++)
+		for(int j=0; j < wide; j++)
 		{
 			board[i][j] = EMPTY;
 		}
-	}	
+	}
 	width = wide;
 	height = high;
 	toWin = x;
@@ -44,7 +46,7 @@ void ConnectX::toggleTurn()
 bool ConnectX::inBounds(int w, int h)
 {
 	bool inside;
-	if( w>=width || w<0 )
+	if( w >=width || w<0 )
 		inside = false;
 	else
 		inside = true;
@@ -53,6 +55,8 @@ bool ConnectX::inBounds(int w, int h)
 		inside = false;
 	else
 		inside = true;
+
+	// cout << "INside flag : "<<inside<<endl;
 
 	return inside;
 }
@@ -105,8 +109,8 @@ Piece ConnectX::at(int w, int h)
 }
 
 // Puts the current player's piece in a vertical column, where the piece falls
-// to the lowest empty position available in the board. Placing a piece in a 
-// "bad" column (such as a column that doesn't exist or is already full of 
+// to the lowest empty position available in the board. Placing a piece in a
+// "bad" column (such as a column that doesn't exist or is already full of
 // pieces) results in the player just losing their turn
 void ConnectX::placePiece(int column)
 {
