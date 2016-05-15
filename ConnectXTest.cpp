@@ -15,6 +15,7 @@ class ConnectXTest : public ::testing::Test
 		virtual void TearDown(){}
 };
 
+
 TEST(ConnectXTest, sanityCheck)
 {
 	ASSERT_TRUE(true);
