@@ -3,4 +3,6 @@ language: cpp
 compiler:
 - clang
 - gcc
-build: make 
+script: 
+- make clean
+- make
