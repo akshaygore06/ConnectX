@@ -3,3 +3,4 @@ language: cpp
 compiler:
 - clang
 - gcc
+build: make 
